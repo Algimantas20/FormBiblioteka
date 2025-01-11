@@ -1,0 +1,16 @@
+[
+  {
+    "Title": "Hello",
+    "Author": "Hi Man",
+    "ReleaseDate": "2025-01-02T00:00:00",
+    "PageCount": 200,
+    "Amount": 2
+  },
+  {
+    "Title": "Big Guy",
+    "Author": "Big Man",
+    "ReleaseDate": "2025-01-02T00:00:00",
+    "PageCount": 200,
+    "Amount": 2
+  }
+]
