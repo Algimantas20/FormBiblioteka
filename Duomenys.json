@@ -12,5 +12,12 @@
     "ReleaseDate": "2025-01-02T00:00:00",
     "PageCount": 200,
     "Amount": 2
+  },
+  {
+    "Title": "Sveikas",
+    "Author": "Dede Sveikas",
+    "ReleaseDate": "1997-01-29T00:00:00",
+    "PageCount": 10,
+    "Amount": 15
   }
 ]

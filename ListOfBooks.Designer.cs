@@ -35,8 +35,9 @@
             // BackButton
             // 
             BackButton.Location = new Point(0, 0);
+            BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(83, 30);
+            BackButton.Size = new Size(95, 40);
             BackButton.TabIndex = 13;
             BackButton.Text = "Back";
             BackButton.UseVisualStyleBackColor = true;
@@ -44,18 +45,20 @@
             // 
             // BookInfoLabel
             // 
-            BookInfoLabel.Location = new Point(275, 9);
+            BookInfoLabel.Font = new Font("Segoe UI", 18F);
+            BookInfoLabel.Location = new Point(314, 12);
             BookInfoLabel.Name = "BookInfoLabel";
-            BookInfoLabel.Size = new Size(497, 418);
+            BookInfoLabel.Size = new Size(568, 557);
             BookInfoLabel.TabIndex = 14;
             // 
             // ListOfBooks
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 436);
+            ClientSize = new Size(896, 581);
             Controls.Add(BookInfoLabel);
             Controls.Add(BackButton);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ListOfBooks";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;

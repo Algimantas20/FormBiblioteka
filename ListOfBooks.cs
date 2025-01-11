@@ -8,22 +8,7 @@ namespace FormBiblioteka
         public ListOfBooks()
         {
             InitializeComponent();
-
-            for (int i = 0; i < BookList.Count; i++)
-            {
-                Book book = BookList[i];
-                Button button = new()
-                {
-                    Text = book.Title,
-                    Size = new Size(200, 40),
-                    Name = $"BookButton{i}"
-                };
-                if (i == 0) { button.Location = new Point(10, 50); }
-                else if (i == 1) { button.Location = new Point(10, 100); }
-                else { button.Location = new Point(10, 50 * i); }
-
-                this.Controls.Add(button);
-            }
+            DisplayBooks();
         }
 
         private void ListOfBooks_Load(object sender, EventArgs e) { }
@@ -31,16 +16,13 @@ namespace FormBiblioteka
         {
             const string path = @"..\..\..\Duomenys.json";
 
-            if (!File.Exists(path))
-            {
-                return [];
-            }
+            if (!File.Exists(path)) {  return []; }
 
             try
             {
                 string jsonContent = File.ReadAllText(path);
 
-                return JsonSerializer.Deserialize<List<Book>>(jsonContent) ?? new List<Book>();
+                return JsonSerializer.Deserialize<List<Book>>(jsonContent) ?? [];
             }
             catch (Exception ex)
             {
@@ -55,10 +37,35 @@ namespace FormBiblioteka
             HeroPage heroPageForm = new();
             heroPageForm.ShowDialog();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void DisplayBooks()
         {
 
+            for (int i = 0; i < BookList.Count; i++)
+            {
+                Book book = BookList[i];
+                Button button = new()
+                {
+                    Text = book.Title,
+                    Size = new Size(200, 40),
+                    Location = new Point(10, 50 + (50 * i)),
+                    Name = $"BookButton{i}"
+                };
+
+                button.Click += (sender, e) => { DisplayInfo(sender, e); };
+
+                this.Controls.Add(button);
+            }
+        }
+        private void DisplayInfo(object sender, EventArgs e)
+        {
+            Button button = (sender as Button)!;
+            Book selectedBook = BookList.SingleOrDefault(book => book!.Title == button.Text)!;
+
+            this.BookInfoLabel.Text = $"Title: {selectedBook.Title}\n" +
+                                      $"Author: {selectedBook.Author}\n" +
+                                      $"Release Date: {selectedBook.ReleaseDate}\n" +
+                                      $"Page Count: {selectedBook.PageCount}\n" +
+                                      $"Amount:{selectedBook.Amount}";
         }
     }
 }
