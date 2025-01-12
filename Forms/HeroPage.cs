@@ -17,7 +17,14 @@ namespace FormBiblioteka
         {
             this.Hide();
             ListOfBooks listOfBooksForm = new();
-            listOfBooksForm.ShowDialog();
+            listOfBooksForm.Show();
+        }
+
+        private void TakeReturnFormButtonClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            Take_ReturnForm takeReturnForm = new();
+            takeReturnForm.ShowDialog();
         }
     }
 }

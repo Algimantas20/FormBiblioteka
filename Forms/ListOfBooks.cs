@@ -4,14 +4,22 @@ namespace FormBiblioteka
 {
     public partial class ListOfBooks : Form
     {
-        private static List<Book?> BookList = GetBooksFromFile();
+        private static List<Book> BookList = GetBooksFromFile();
         public ListOfBooks()
         {
             InitializeComponent();
-            DisplayBooks();
         }
 
-        private void ListOfBooks_Load(object sender, EventArgs e) { }
+        private void ListOfBooks_Load(object sender, EventArgs e) 
+        {
+            RefreshBookList();
+        }
+        private void RefreshBookList()
+        {
+            // Reload data from the JSON file
+            BookList = GetBooksFromFile();
+            DisplayBooks();
+        }
         private static List<Book> GetBooksFromFile()
         {
             const string path = @"..\..\..\Duomenys.json";
@@ -33,7 +41,7 @@ namespace FormBiblioteka
 
         private void BackButtonClick(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             HeroPage heroPageForm = new();
             heroPageForm.ShowDialog();
         }
@@ -51,7 +59,7 @@ namespace FormBiblioteka
                     Name = $"BookButton{i}"
                 };
 
-                button.Click += (sender, e) => { DisplayInfo(sender, e); };
+                button.Click += (sender, e) => { DisplayInfo(sender!, e); };
 
                 this.Controls.Add(button);
             }
