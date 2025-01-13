@@ -1,22 +1,26 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.InteropServices;
+using System.Text.Json;
 
 namespace FormBiblioteka
 {
     public partial class ListOfBooks : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
         private static List<Book> BookList = GetBooksFromFile();
         public ListOfBooks()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        private void ListOfBooks_Load(object sender, EventArgs e) 
+        private void ListOfBooks_Load(object sender, EventArgs e)
         {
             RefreshBookList();
         }
         private void RefreshBookList()
         {
-            // Reload data from the JSON file
             BookList = GetBooksFromFile();
             DisplayBooks();
         }
@@ -24,7 +28,7 @@ namespace FormBiblioteka
         {
             const string path = @"..\..\..\Duomenys.json";
 
-            if (!File.Exists(path)) {  return []; }
+            if (!File.Exists(path)) { return []; }
 
             try
             {

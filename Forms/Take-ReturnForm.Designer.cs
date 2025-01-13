@@ -45,20 +45,19 @@
             OperationTypeInput.DropDownStyle = ComboBoxStyle.DropDownList;
             OperationTypeInput.FormattingEnabled = true;
             OperationTypeInput.Items.AddRange(new object[] { "Take", "Return" });
-            OperationTypeInput.Location = new Point(185, 121);
-            OperationTypeInput.Margin = new Padding(3, 2, 3, 2);
+            OperationTypeInput.Location = new Point(211, 161);
             OperationTypeInput.MaxDropDownItems = 10;
             OperationTypeInput.Name = "OperationTypeInput";
-            OperationTypeInput.Size = new Size(133, 23);
+            OperationTypeInput.Size = new Size(151, 28);
             OperationTypeInput.TabIndex = 0;
             // 
             // TitleTextLabel
             // 
             TitleTextLabel.AutoSize = true;
             TitleTextLabel.Font = new Font("Segoe UI", 12F);
-            TitleTextLabel.Location = new Point(96, 123);
+            TitleTextLabel.Location = new Point(110, 164);
             TitleTextLabel.Name = "TitleTextLabel";
-            TitleTextLabel.Size = new Size(83, 21);
+            TitleTextLabel.Size = new Size(105, 28);
             TitleTextLabel.TabIndex = 2;
             TitleTextLabel.Text = "Operation:";
             // 
@@ -66,9 +65,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(131, 146);
+            label1.Location = new Point(150, 195);
             label1.Name = "label1";
-            label1.Size = new Size(48, 21);
+            label1.Size = new Size(61, 28);
             label1.TabIndex = 4;
             label1.Text = "Book:";
             // 
@@ -76,28 +75,26 @@
             // 
             BookInput.DropDownStyle = ComboBoxStyle.DropDownList;
             BookInput.FormattingEnabled = true;
-            BookInput.Location = new Point(185, 146);
-            BookInput.Margin = new Padding(3, 2, 3, 2);
+            BookInput.Location = new Point(211, 195);
             BookInput.Name = "BookInput";
-            BookInput.Size = new Size(133, 23);
+            BookInput.Size = new Size(151, 28);
             BookInput.TabIndex = 3;
             // 
             // NumberOfBooksInput
             // 
             NumberOfBooksInput.BorderStyle = BorderStyle.FixedSingle;
-            NumberOfBooksInput.Location = new Point(185, 172);
-            NumberOfBooksInput.Margin = new Padding(3, 2, 3, 2);
+            NumberOfBooksInput.Location = new Point(211, 229);
             NumberOfBooksInput.Name = "NumberOfBooksInput";
-            NumberOfBooksInput.Size = new Size(132, 23);
+            NumberOfBooksInput.Size = new Size(151, 27);
             NumberOfBooksInput.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(110, 172);
+            label2.Location = new Point(126, 229);
             label2.Name = "label2";
-            label2.Size = new Size(69, 21);
+            label2.Size = new Size(87, 28);
             label2.TabIndex = 6;
             label2.Text = "Amount:";
             // 
@@ -105,17 +102,18 @@
             // 
             HeaderLabel.AutoSize = true;
             HeaderLabel.Font = new Font("Segoe UI", 24F);
-            HeaderLabel.Location = new Point(59, 58);
+            HeaderLabel.Location = new Point(67, 77);
             HeaderLabel.Name = "HeaderLabel";
-            HeaderLabel.Size = new Size(336, 45);
+            HeaderLabel.Size = new Size(418, 54);
             HeaderLabel.TabIndex = 11;
             HeaderLabel.Text = "Take or Return a Book:";
             // 
             // BackButton
             // 
             BackButton.Location = new Point(0, 0);
+            BackButton.Margin = new Padding(3, 4, 3, 4);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(83, 30);
+            BackButton.Size = new Size(95, 40);
             BackButton.TabIndex = 13;
             BackButton.Text = "Back";
             BackButton.UseVisualStyleBackColor = true;
@@ -123,9 +121,10 @@
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(640, 389);
+            SubmitButton.Location = new Point(731, 519);
+            SubmitButton.Margin = new Padding(3, 4, 3, 4);
             SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(132, 35);
+            SubmitButton.Size = new Size(151, 47);
             SubmitButton.TabIndex = 14;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
@@ -133,9 +132,9 @@
             // 
             // Take_ReturnForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 436);
+            ClientSize = new Size(896, 581);
             Controls.Add(SubmitButton);
             Controls.Add(BackButton);
             Controls.Add(HeaderLabel);
@@ -145,12 +144,12 @@
             Controls.Add(BookInput);
             Controls.Add(TitleTextLabel);
             Controls.Add(OperationTypeInput);
-            Margin = new Padding(3, 2, 3, 2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Take_ReturnForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Take_ReturnForm";
-            ((System.ComponentModel.ISupportInitialize)NumberOfBooksInput).EndInit();
             Load += TakeReturnFormLoad;
+            ((System.ComponentModel.ISupportInitialize)NumberOfBooksInput).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

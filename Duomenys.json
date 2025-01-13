@@ -1,51 +1,11 @@
 [
   {
-    "Title": "Hello",
-    "Author": "Hi Man",
-    "ReleaseDate": "2025-01-02T00:00:00",
+    "Title": "Kebabas",
+    "Author": "Turkas",
+    "ReleaseDate": "1997-01-25T00:00:00",
     "PageCount": 200,
-    "Amount": 2
-  },
-  {
-    "Title": "Big Guy",
-    "Author": "Big Man",
-    "ReleaseDate": "2025-01-02T00:00:00",
-    "PageCount": 200,
-    "Amount": 2
-  },
-  {
-    "Title": "Sveikas",
-    "Author": "Dede Sveikas",
-    "ReleaseDate": "1997-01-29T00:00:00",
-    "PageCount": 10,
-    "Amount": 15
-  },
-  {
-    "Title": "He",
-    "Author": "EH",
-    "ReleaseDate": "2021-01-31T00:00:00",
-    "PageCount": 150,
-    "Amount": 6
-  },
-  {
-    "Title": "AAAAAA",
-    "Author": "AAAAAAAAAAA",
-    "ReleaseDate": "2020-01-20T00:00:00",
-    "PageCount": 232,
-    "Amount": 76
-  },
-  {
-    "Title": "Kuku",
-    "Author": "Kuku",
-    "ReleaseDate": "1978-12-25T00:00:00",
-    "PageCount": 200,
-    "Amount": 15
-  },
-  {
-    "Title": "Viktoras savanaudis",
-    "Author": "Player 101",
-    "ReleaseDate": "2002-01-05T00:00:00",
-    "PageCount": 2200,
-    "Amount": 1
+    "Amount": 5,
+    "TakenBooks": 0,
+    "AmountLeft": 5
   }
 ]

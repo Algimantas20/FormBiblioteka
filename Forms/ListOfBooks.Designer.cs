@@ -58,6 +58,7 @@
             ClientSize = new Size(896, 581);
             Controls.Add(BookInfoLabel);
             Controls.Add(BackButton);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "ListOfBooks";
             ShowIcon = false;

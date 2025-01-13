@@ -50,6 +50,7 @@ namespace FormBiblioteka
             // 
             // TitleTextBox
             // 
+            TitleTextBox.BackColor = SystemColors.ButtonHighlight;
             TitleTextBox.Location = new Point(181, 118);
             TitleTextBox.Name = "TitleTextBox";
             TitleTextBox.Size = new Size(259, 23);
@@ -175,6 +176,7 @@ namespace FormBiblioteka
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(784, 436);
             Controls.Add(ErrorLabel);
             Controls.Add(BackButton);
@@ -190,6 +192,7 @@ namespace FormBiblioteka
             Controls.Add(AuthorTextBox);
             Controls.Add(TitleTextLabel);
             Controls.Add(TitleTextBox);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "AddBooks";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;

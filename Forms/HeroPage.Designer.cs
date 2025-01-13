@@ -86,6 +86,7 @@
             Controls.Add(ListOfBooksButton);
             Controls.Add(TakeReturnFormButton);
             Controls.Add(AddBookButton);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "HeroPage";
             ShowIcon = false;

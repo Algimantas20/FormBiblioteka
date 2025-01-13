@@ -1,12 +1,17 @@
-﻿using System.Text.Json;
+﻿using System.Runtime.InteropServices;
+using System.Text.Json;
 
 namespace FormBiblioteka
 {
     public partial class AddBooks : Form
     {
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
         public AddBooks()
         {
             InitializeComponent();
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void SubmitButtonClick(object sender, EventArgs e)
@@ -42,13 +47,13 @@ namespace FormBiblioteka
 
             List<Book> books;
 
-            // Check if the file exists and load the existing JSON array, if any
             if (File.Exists(fileName))
             {
                 string existingJson = File.ReadAllText(fileName);
                 books = string.IsNullOrWhiteSpace(existingJson)
                     ? []
-                    : JsonSerializer.Deserialize<List<Book>>(existingJson) ?? new List<Book>();
+                    : JsonSerializer.Deserialize<List<Book>>(existingJson)
+                      ?? [];
             }
             else
             {
@@ -60,7 +65,7 @@ namespace FormBiblioteka
             string updatedJson = JsonSerializer.Serialize(books, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(fileName, updatedJson);
         }
-    
+
 
         private void BackButtonClick(object sender, EventArgs e)
         {
@@ -70,14 +75,6 @@ namespace FormBiblioteka
                 heroPageForm.ShowDialog();
             }
         }
-    }
 
-    class Book(string title, string author, DateTime releaseDate, int pageCount, int amount)
-    {
-        public string Title { get; set; } = title;
-        public string Author { get; set; } = author;
-        public DateTime ReleaseDate { get; set; } = releaseDate;
-        public int PageCount { get; set; } = pageCount;
-        public int Amount { get; set; } = amount;
     }
 }
