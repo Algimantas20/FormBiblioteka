@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using FormBiblioteka.Modules;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 
 namespace FormBiblioteka
@@ -66,15 +67,11 @@ namespace FormBiblioteka
             File.WriteAllText(fileName, updatedJson);
         }
 
-
         private void BackButtonClick(object sender, EventArgs e)
         {
-            {
-                this.Hide();
-                HeroPage heroPageForm = new();
-                heroPageForm.ShowDialog();
-            }
+            this.Hide();
+            HeroPage heroPage = new();
+            heroPage.Show();
         }
-
     }
 }

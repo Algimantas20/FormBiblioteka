@@ -1,4 +1,6 @@
-﻿namespace FormBiblioteka
+﻿using FormBiblioteka.Modules;
+
+namespace FormBiblioteka
 {
     partial class HeroPage
     {
@@ -32,6 +34,7 @@
             TakeReturnFormButton = new Button();
             ListOfBooksButton = new Button();
             label1 = new Label();
+            ExitButton = new Button();
             SuspendLayout();
             // 
             // AddBookButton
@@ -77,11 +80,25 @@
             label1.Text = "Biblioteka";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // ExitButton
+            // 
+            ExitButton.AllowDrop = true;
+            ExitButton.Font = new Font("Arial", 12F);
+            ExitButton.Location = new Point(827, 9);
+            ExitButton.Margin = new Padding(0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(55, 55);
+            ExitButton.TabIndex = 15;
+            ExitButton.Text = "X";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ButtonLogic.ExitButtonClick;
+            // 
             // HeroPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 581);
+            Controls.Add(ExitButton);
             Controls.Add(label1);
             Controls.Add(ListOfBooksButton);
             Controls.Add(TakeReturnFormButton);
@@ -101,5 +118,6 @@
         private Button TakeReturnFormButton;
         private Button ListOfBooksButton;
         private Label label1;
+        private Button ExitButton;
     }
 }

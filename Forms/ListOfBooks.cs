@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using FormBiblioteka.Modules;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 
 namespace FormBiblioteka
@@ -59,7 +60,7 @@ namespace FormBiblioteka
                 {
                     Text = book.Title,
                     Size = new Size(200, 40),
-                    Location = new Point(10, 50 + (50 * i)),
+                    Location = new Point(10, 75 + (50 * i)),
                     Name = $"BookButton{i}"
                 };
 

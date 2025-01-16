@@ -1,4 +1,4 @@
-﻿namespace FormBiblioteka
+﻿namespace FormBiblioteka.Modules
 {
     class Book(string title, string author, DateTime releaseDate, int pageCount, int amount)
     {

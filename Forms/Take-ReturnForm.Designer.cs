@@ -1,4 +1,6 @@
-﻿namespace FormBiblioteka
+﻿using FormBiblioteka.Modules;
+
+namespace FormBiblioteka
 {
     partial class Take_ReturnForm
     {
@@ -35,8 +37,9 @@
             NumberOfBooksInput = new NumericUpDown();
             label2 = new Label();
             HeaderLabel = new Label();
-            BackButton = new Button();
             SubmitButton = new Button();
+            ExitButton = new Button();
+            BackButton = new Button();
             ((System.ComponentModel.ISupportInitialize)NumberOfBooksInput).BeginInit();
             SuspendLayout();
             // 
@@ -108,17 +111,6 @@
             HeaderLabel.TabIndex = 11;
             HeaderLabel.Text = "Take or Return a Book:";
             // 
-            // BackButton
-            // 
-            BackButton.Location = new Point(0, 0);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
-            BackButton.Name = "BackButton";
-            BackButton.Size = new Size(95, 40);
-            BackButton.TabIndex = 13;
-            BackButton.Text = "Back";
-            BackButton.UseVisualStyleBackColor = true;
-            BackButton.Click += BackButtonClick;
-            // 
             // SubmitButton
             // 
             SubmitButton.Location = new Point(731, 519);
@@ -130,13 +122,39 @@
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButtonClick;
             // 
+            // ExitButton
+            // 
+            ExitButton.AllowDrop = true;
+            ExitButton.Font = new Font("Arial", 12F);
+            ExitButton.Location = new Point(827, 9);
+            ExitButton.Margin = new Padding(0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(55, 55);
+            ExitButton.TabIndex = 17;
+            ExitButton.Text = "X";
+            ExitButton.UseVisualStyleBackColor = true;
+            // 
+            // BackButton
+            // 
+            BackButton.AllowDrop = true;
+            BackButton.Font = new Font("Arial", 16F);
+            BackButton.Location = new Point(9, 9);
+            BackButton.Margin = new Padding(0);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(55, 55);
+            BackButton.TabIndex = 18;
+            BackButton.Text = "<";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += BackButtonClick;
+            // 
             // Take_ReturnForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 581);
-            Controls.Add(SubmitButton);
             Controls.Add(BackButton);
+            Controls.Add(ExitButton);
+            Controls.Add(SubmitButton);
             Controls.Add(HeaderLabel);
             Controls.Add(label2);
             Controls.Add(NumberOfBooksInput);
@@ -163,7 +181,8 @@
         private NumericUpDown NumberOfBooksInput;
         private Label label2;
         private Label HeaderLabel;
-        private Button BackButton;
         private Button SubmitButton;
+        private Button ExitButton;
+        private Button BackButton;
     }
 }

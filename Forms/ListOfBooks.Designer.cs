@@ -1,4 +1,6 @@
-﻿namespace FormBiblioteka
+﻿using FormBiblioteka.Modules;
+
+namespace FormBiblioteka
 {
     partial class ListOfBooks
     {
@@ -28,20 +30,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            BackButton = new Button();
             BookInfoLabel = new Label();
+            ExitButton = new Button();
+            BackButton = new Button();
             SuspendLayout();
-            // 
-            // BackButton
-            // 
-            BackButton.Location = new Point(0, 0);
-            BackButton.Margin = new Padding(3, 4, 3, 4);
-            BackButton.Name = "BackButton";
-            BackButton.Size = new Size(95, 40);
-            BackButton.TabIndex = 13;
-            BackButton.Text = "Back";
-            BackButton.UseVisualStyleBackColor = true;
-            BackButton.Click += BackButtonClick;
             // 
             // BookInfoLabel
             // 
@@ -51,13 +43,39 @@
             BookInfoLabel.Size = new Size(568, 557);
             BookInfoLabel.TabIndex = 14;
             // 
+            // ExitButton
+            // 
+            ExitButton.AllowDrop = true;
+            ExitButton.Font = new Font("Arial", 12F);
+            ExitButton.Location = new Point(827, 9);
+            ExitButton.Margin = new Padding(0);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(55, 55);
+            ExitButton.TabIndex = 16;
+            ExitButton.Text = "X";
+            ExitButton.UseVisualStyleBackColor = true;
+            // 
+            // BackButton
+            // 
+            BackButton.AllowDrop = true;
+            BackButton.Font = new Font("Arial", 16F);
+            BackButton.Location = new Point(9, 9);
+            BackButton.Margin = new Padding(0);
+            BackButton.Name = "BackButton";
+            BackButton.Size = new Size(55, 55);
+            BackButton.TabIndex = 17;
+            BackButton.Text = "<";
+            BackButton.UseVisualStyleBackColor = true;
+            BackButton.Click += BackButtonClick;
+            // 
             // ListOfBooks
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(896, 581);
-            Controls.Add(BookInfoLabel);
             Controls.Add(BackButton);
+            Controls.Add(ExitButton);
+            Controls.Add(BookInfoLabel);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             Name = "ListOfBooks";
@@ -69,8 +87,8 @@
         }
 
         #endregion
-
-        private Button BackButton;
         private Label BookInfoLabel;
+        private Button ExitButton;
+        private Button BackButton;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using FormBiblioteka.Modules;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 
 namespace FormBiblioteka
@@ -16,7 +17,7 @@ namespace FormBiblioteka
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
-        public void TakeReturnFormLoad (object sender, EventArgs e) { UpdateBookInput(); }
+        public void TakeReturnFormLoad(object sender, EventArgs e) { UpdateBookInput(); }
         private void BackButtonClick(object sender, EventArgs e)
         {
             this.Close();
@@ -27,7 +28,7 @@ namespace FormBiblioteka
         {
             OperationType operation = (OperationType)Enum.Parse(typeof(OperationType), OperationTypeInput.Text);
             Book book = BookArray.SingleOrDefault(book => book!.Title == BookInput.Text)!;
-            int amount = (int) NumberOfBooksInput.Value;
+            int amount = (int)NumberOfBooksInput.Value;
 
             UpdateData(operation, book, amount);
         }
@@ -81,11 +82,9 @@ namespace FormBiblioteka
         }
         private void JsonifyData()
         {
-            const string filePath = @"..\..\..\Duomenys.json"; 
+            const string filePath = @"..\..\..\Duomenys.json";
             string updatedJson = JsonSerializer.Serialize(BookArray, options: new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, updatedJson);
         }
-
-
     }
 }
