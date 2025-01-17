@@ -1,19 +1,14 @@
 ﻿using FormBiblioteka.Modules;
-using System.Runtime.InteropServices;
 using System.Text.Json;
 
 namespace FormBiblioteka
 {
     public partial class ListOfBooks : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-
         private static List<Book> BookList = GetBooksFromFile();
         public ListOfBooks()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void ListOfBooks_Load(object sender, EventArgs e)
@@ -53,20 +48,23 @@ namespace FormBiblioteka
         private void DisplayBooks()
         {
 
+            int xPosition = (BookButtonDisplay.ClientSize.Width - 200) / 2;
             for (int i = 0; i < BookList.Count; i++)
             {
+                
+
                 Book book = BookList[i];
                 Button button = new()
                 {
                     Text = book.Title,
                     Size = new Size(200, 40),
-                    Location = new Point(10, 75 + (50 * i)),
+                    Location = new Point(xPosition, 10 + (50 * i)),
                     Name = $"BookButton{i}"
                 };
 
                 button.Click += (sender, e) => { DisplayInfo(sender!, e); };
 
-                this.Controls.Add(button);
+                BookButtonDisplay.Controls.Add(button);
             }
         }
         private void DisplayInfo(object sender, EventArgs e)
@@ -78,7 +76,8 @@ namespace FormBiblioteka
                                       $"Author: {selectedBook.Author}\n" +
                                       $"Release Date: {selectedBook.ReleaseDate}\n" +
                                       $"Page Count: {selectedBook.PageCount}\n" +
-                                      $"Amount:{selectedBook.Amount}";
+                                      $"Amount:{selectedBook.Amount}\n" +
+                                      $"Amount Left:{selectedBook.AmountLeft}";
         }
     }
 }

@@ -1,11 +1,92 @@
 [
   {
-    "Title": "Kebabas",
-    "Author": "Turkas",
-    "ReleaseDate": "1997-01-25T00:00:00",
-    "PageCount": 200,
+    "Title": "The Great Adventure",
+    "Author": "John Explorer",
+    "ReleaseDate": "2003-07-14T00:00:00",
+    "PageCount": 350,
+    "Amount": 10,
+    "TakenBooks": 3,
+    "AmountLeft": 7
+  },
+  {
+    "Title": "Mystery of the Night",
+    "Author": "Anna Shadows",
+    "ReleaseDate": "2010-10-31T00:00:00",
+    "PageCount": 275,
+    "Amount": 8,
+    "TakenBooks": 2,
+    "AmountLeft": 6
+  },
+  {
+    "Title": "Cooking Like a Pro",
+    "Author": "Chef Gordon",
+    "ReleaseDate": "2015-03-10T00:00:00",
+    "PageCount": 150,
     "Amount": 5,
+    "TakenBooks": 1,
+    "AmountLeft": 4
+  },
+  {
+    "Title": "History of Technology",
+    "Author": "Lisa Innovate",
+    "ReleaseDate": "1999-05-20T00:00:00",
+    "PageCount": 500,
+    "Amount": 3,
     "TakenBooks": 0,
-    "AmountLeft": 5
+    "AmountLeft": 3
+  },
+  {
+    "Title": "Fantasy World",
+    "Author": "Eleanor Dreamer",
+    "ReleaseDate": "2018-08-15T00:00:00",
+    "PageCount": 400,
+    "Amount": 6,
+    "TakenBooks": 4,
+    "AmountLeft": 2
+  },
+  {
+    "Title": "Space Odyssey",
+    "Author": "Arthur Star",
+    "ReleaseDate": "1985-11-25T00:00:00",
+    "PageCount": 320,
+    "Amount": 7,
+    "TakenBooks": 3,
+    "AmountLeft": 4
+  },
+  {
+    "Title": "Gardening for Beginners",
+    "Author": "Green Thumb",
+    "ReleaseDate": "2012-06-18T00:00:00",
+    "PageCount": 180,
+    "Amount": 4,
+    "TakenBooks": 0,
+    "AmountLeft": 4
+  },
+  {
+    "Title": "The Art of War",
+    "Author": "Sun Tzu",
+    "ReleaseDate": "1910-01-01T00:00:00",
+    "PageCount": 100,
+    "Amount": 15,
+    "TakenBooks": 5,
+    "AmountLeft": 10
+  },
+  {
+    "Title": "Ocean's Depths",
+    "Author": "Marina Blue",
+    "ReleaseDate": "2021-04-12T00:00:00",
+    "PageCount": 260,
+    "Amount": 12,
+    "TakenBooks": 6,
+    "AmountLeft": 6
+  },
+  {
+    "Title": "Programming Essentials",
+    "Author": "Code Master",
+    "ReleaseDate": "2023-09-01T00:00:00",
+    "PageCount": 600,
+    "Amount": 20,
+    "TakenBooks": 8,
+    "AmountLeft": 12
   }
 ]

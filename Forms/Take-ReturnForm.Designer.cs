@@ -38,7 +38,6 @@ namespace FormBiblioteka
             label2 = new Label();
             HeaderLabel = new Label();
             SubmitButton = new Button();
-            ExitButton = new Button();
             BackButton = new Button();
             ((System.ComponentModel.ISupportInitialize)NumberOfBooksInput).BeginInit();
             SuspendLayout();
@@ -48,19 +47,20 @@ namespace FormBiblioteka
             OperationTypeInput.DropDownStyle = ComboBoxStyle.DropDownList;
             OperationTypeInput.FormattingEnabled = true;
             OperationTypeInput.Items.AddRange(new object[] { "Take", "Return" });
-            OperationTypeInput.Location = new Point(211, 161);
+            OperationTypeInput.Location = new Point(185, 121);
+            OperationTypeInput.Margin = new Padding(3, 2, 3, 2);
             OperationTypeInput.MaxDropDownItems = 10;
             OperationTypeInput.Name = "OperationTypeInput";
-            OperationTypeInput.Size = new Size(151, 28);
+            OperationTypeInput.Size = new Size(133, 23);
             OperationTypeInput.TabIndex = 0;
             // 
             // TitleTextLabel
             // 
             TitleTextLabel.AutoSize = true;
             TitleTextLabel.Font = new Font("Segoe UI", 12F);
-            TitleTextLabel.Location = new Point(110, 164);
+            TitleTextLabel.Location = new Point(96, 123);
             TitleTextLabel.Name = "TitleTextLabel";
-            TitleTextLabel.Size = new Size(105, 28);
+            TitleTextLabel.Size = new Size(83, 21);
             TitleTextLabel.TabIndex = 2;
             TitleTextLabel.Text = "Operation:";
             // 
@@ -68,9 +68,9 @@ namespace FormBiblioteka
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(150, 195);
+            label1.Location = new Point(131, 146);
             label1.Name = "label1";
-            label1.Size = new Size(61, 28);
+            label1.Size = new Size(48, 21);
             label1.TabIndex = 4;
             label1.Text = "Book:";
             // 
@@ -78,26 +78,28 @@ namespace FormBiblioteka
             // 
             BookInput.DropDownStyle = ComboBoxStyle.DropDownList;
             BookInput.FormattingEnabled = true;
-            BookInput.Location = new Point(211, 195);
+            BookInput.Location = new Point(185, 146);
+            BookInput.Margin = new Padding(3, 2, 3, 2);
             BookInput.Name = "BookInput";
-            BookInput.Size = new Size(151, 28);
+            BookInput.Size = new Size(133, 23);
             BookInput.TabIndex = 3;
             // 
             // NumberOfBooksInput
             // 
             NumberOfBooksInput.BorderStyle = BorderStyle.FixedSingle;
-            NumberOfBooksInput.Location = new Point(211, 229);
+            NumberOfBooksInput.Location = new Point(185, 172);
+            NumberOfBooksInput.Margin = new Padding(3, 2, 3, 2);
             NumberOfBooksInput.Name = "NumberOfBooksInput";
-            NumberOfBooksInput.Size = new Size(151, 27);
+            NumberOfBooksInput.Size = new Size(132, 23);
             NumberOfBooksInput.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(126, 229);
+            label2.Location = new Point(110, 172);
             label2.Name = "label2";
-            label2.Size = new Size(87, 28);
+            label2.Size = new Size(69, 21);
             label2.TabIndex = 6;
             label2.Text = "Amount:";
             // 
@@ -105,43 +107,30 @@ namespace FormBiblioteka
             // 
             HeaderLabel.AutoSize = true;
             HeaderLabel.Font = new Font("Segoe UI", 24F);
-            HeaderLabel.Location = new Point(67, 77);
+            HeaderLabel.Location = new Point(59, 58);
             HeaderLabel.Name = "HeaderLabel";
-            HeaderLabel.Size = new Size(418, 54);
+            HeaderLabel.Size = new Size(336, 45);
             HeaderLabel.TabIndex = 11;
             HeaderLabel.Text = "Take or Return a Book:";
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(731, 519);
-            SubmitButton.Margin = new Padding(3, 4, 3, 4);
+            SubmitButton.Location = new Point(640, 389);
             SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(151, 47);
+            SubmitButton.Size = new Size(132, 35);
             SubmitButton.TabIndex = 14;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
             SubmitButton.Click += SubmitButtonClick;
             // 
-            // ExitButton
-            // 
-            ExitButton.AllowDrop = true;
-            ExitButton.Font = new Font("Arial", 12F);
-            ExitButton.Location = new Point(827, 9);
-            ExitButton.Margin = new Padding(0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(55, 55);
-            ExitButton.TabIndex = 17;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            // 
             // BackButton
             // 
             BackButton.AllowDrop = true;
             BackButton.Font = new Font("Arial", 16F);
-            BackButton.Location = new Point(9, 9);
+            BackButton.Location = new Point(8, 7);
             BackButton.Margin = new Padding(0);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(55, 55);
+            BackButton.Size = new Size(48, 41);
             BackButton.TabIndex = 18;
             BackButton.Text = "<";
             BackButton.UseVisualStyleBackColor = true;
@@ -149,11 +138,10 @@ namespace FormBiblioteka
             // 
             // Take_ReturnForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(896, 581);
+            ClientSize = new Size(784, 436);
             Controls.Add(BackButton);
-            Controls.Add(ExitButton);
             Controls.Add(SubmitButton);
             Controls.Add(HeaderLabel);
             Controls.Add(label2);
@@ -162,7 +150,8 @@ namespace FormBiblioteka
             Controls.Add(BookInput);
             Controls.Add(TitleTextLabel);
             Controls.Add(OperationTypeInput);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Take_ReturnForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Take_ReturnForm";
@@ -182,7 +171,6 @@ namespace FormBiblioteka
         private Label label2;
         private Label HeaderLabel;
         private Button SubmitButton;
-        private Button ExitButton;
         private Button BackButton;
     }
 }

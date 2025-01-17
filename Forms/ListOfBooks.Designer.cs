@@ -31,53 +31,63 @@ namespace FormBiblioteka
         private void InitializeComponent()
         {
             BookInfoLabel = new Label();
-            ExitButton = new Button();
             BackButton = new Button();
+            BookButtonDisplay = new Panel();
+            Title = new Label();
             SuspendLayout();
             // 
             // BookInfoLabel
             // 
+            BookInfoLabel.BorderStyle = BorderStyle.Fixed3D;
             BookInfoLabel.Font = new Font("Segoe UI", 18F);
-            BookInfoLabel.Location = new Point(314, 12);
+            BookInfoLabel.Location = new Point(270, 9);
             BookInfoLabel.Name = "BookInfoLabel";
-            BookInfoLabel.Size = new Size(568, 557);
+            BookInfoLabel.Size = new Size(500, 420);
             BookInfoLabel.TabIndex = 14;
-            // 
-            // ExitButton
-            // 
-            ExitButton.AllowDrop = true;
-            ExitButton.Font = new Font("Arial", 12F);
-            ExitButton.Location = new Point(827, 9);
-            ExitButton.Margin = new Padding(0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(55, 55);
-            ExitButton.TabIndex = 16;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
             // 
             // BackButton
             // 
             BackButton.AllowDrop = true;
             BackButton.Font = new Font("Arial", 16F);
-            BackButton.Location = new Point(9, 9);
+            BackButton.Location = new Point(8, 7);
             BackButton.Margin = new Padding(0);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(55, 55);
+            BackButton.Size = new Size(48, 41);
             BackButton.TabIndex = 17;
             BackButton.Text = "<";
             BackButton.UseVisualStyleBackColor = true;
             BackButton.Click += BackButtonClick;
             // 
+            // BookButtonDisplay
+            // 
+            BookButtonDisplay.AutoScroll = true;
+            BookButtonDisplay.BorderStyle = BorderStyle.Fixed3D;
+            BookButtonDisplay.Location = new Point(14, 52);
+            BookButtonDisplay.Name = "BookButtonDisplay";
+            BookButtonDisplay.Size = new Size(250, 377);
+            BookButtonDisplay.TabIndex = 18;
+            // 
+            // Title
+            // 
+            Title.BorderStyle = BorderStyle.Fixed3D;
+            Title.Font = new Font("Segoe UI", 16F);
+            Title.Location = new Point(59, 7);
+            Title.Name = "Title";
+            Title.Size = new Size(205, 41);
+            Title.TabIndex = 19;
+            Title.Text = "List of Books";
+            Title.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // ListOfBooks
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(896, 581);
+            ClientSize = new Size(784, 436);
+            Controls.Add(Title);
+            Controls.Add(BookButtonDisplay);
             Controls.Add(BackButton);
-            Controls.Add(ExitButton);
             Controls.Add(BookInfoLabel);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "ListOfBooks";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
@@ -88,7 +98,8 @@ namespace FormBiblioteka
 
         #endregion
         private Label BookInfoLabel;
-        private Button ExitButton;
         private Button BackButton;
+        private Panel BookButtonDisplay;
+        private Label Title;
     }
 }

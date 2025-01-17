@@ -10,10 +10,4 @@
         public int TakenBooks { get; set; } = 0;
         public int AmountLeft { get; set; } = amount;
     }
-
-    enum OperationType
-    {
-        Take,
-        Return
-    }
 }

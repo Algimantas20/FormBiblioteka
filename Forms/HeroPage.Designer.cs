@@ -34,15 +34,13 @@ namespace FormBiblioteka
             TakeReturnFormButton = new Button();
             ListOfBooksButton = new Button();
             label1 = new Label();
-            ExitButton = new Button();
             SuspendLayout();
             // 
             // AddBookButton
             // 
-            AddBookButton.Location = new Point(57, 300);
-            AddBookButton.Margin = new Padding(3, 4, 3, 4);
+            AddBookButton.Location = new Point(50, 225);
             AddBookButton.Name = "AddBookButton";
-            AddBookButton.Size = new Size(200, 67);
+            AddBookButton.Size = new Size(175, 50);
             AddBookButton.TabIndex = 0;
             AddBookButton.Text = "Add a Book";
             AddBookButton.UseVisualStyleBackColor = true;
@@ -50,10 +48,9 @@ namespace FormBiblioteka
             // 
             // TakeReturnFormButton
             // 
-            TakeReturnFormButton.Location = new Point(343, 300);
-            TakeReturnFormButton.Margin = new Padding(3, 4, 3, 4);
+            TakeReturnFormButton.Location = new Point(300, 225);
             TakeReturnFormButton.Name = "TakeReturnFormButton";
-            TakeReturnFormButton.Size = new Size(200, 67);
+            TakeReturnFormButton.Size = new Size(175, 50);
             TakeReturnFormButton.TabIndex = 1;
             TakeReturnFormButton.Text = "Take/Return";
             TakeReturnFormButton.UseVisualStyleBackColor = true;
@@ -61,10 +58,9 @@ namespace FormBiblioteka
             // 
             // ListOfBooksButton
             // 
-            ListOfBooksButton.Location = new Point(629, 300);
-            ListOfBooksButton.Margin = new Padding(3, 4, 3, 4);
+            ListOfBooksButton.Location = new Point(550, 225);
             ListOfBooksButton.Name = "ListOfBooksButton";
-            ListOfBooksButton.Size = new Size(200, 67);
+            ListOfBooksButton.Size = new Size(175, 50);
             ListOfBooksButton.TabIndex = 2;
             ListOfBooksButton.Text = "List of Books";
             ListOfBooksButton.UseVisualStyleBackColor = true;
@@ -73,42 +69,27 @@ namespace FormBiblioteka
             // label1
             // 
             label1.Font = new Font("Segoe UI", 24F);
-            label1.Location = new Point(264, 200);
+            label1.Location = new Point(231, 150);
             label1.Name = "label1";
-            label1.Size = new Size(358, 67);
+            label1.Size = new Size(313, 50);
             label1.TabIndex = 3;
             label1.Text = "Biblioteka";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // ExitButton
-            // 
-            ExitButton.AllowDrop = true;
-            ExitButton.Font = new Font("Arial", 12F);
-            ExitButton.Location = new Point(827, 9);
-            ExitButton.Margin = new Padding(0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(55, 55);
-            ExitButton.TabIndex = 15;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ButtonLogic.ExitButtonClick;
-            // 
             // HeroPage
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(896, 581);
-            Controls.Add(ExitButton);
+            ClientSize = new Size(784, 436);
             Controls.Add(label1);
             Controls.Add(ListOfBooksButton);
             Controls.Add(TakeReturnFormButton);
             Controls.Add(AddBookButton);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HeroPage";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Biblioteka";
             ResumeLayout(false);
         }
 
@@ -118,6 +99,5 @@ namespace FormBiblioteka
         private Button TakeReturnFormButton;
         private Button ListOfBooksButton;
         private Label label1;
-        private Button ExitButton;
     }
 }

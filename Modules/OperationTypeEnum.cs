@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace FormBiblioteka.Modules
 {
-    static internal class ButtonLogic
+    enum OperationType
     {
-        public static void ExitButtonClick(object sender, EventArgs e)
-        {
-            Application.Exit();
-        } 
+        Take,
+        Return
     }
 }

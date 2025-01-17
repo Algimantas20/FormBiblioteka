@@ -47,26 +47,24 @@ namespace FormBiblioteka
             SubmitButton = new Button();
             BackButton = new Button();
             ErrorLabel = new Label();
-            ExitButton = new Button();
             SuspendLayout();
             // 
             // TitleTextBox
             // 
             TitleTextBox.BackColor = SystemColors.ButtonHighlight;
             TitleTextBox.BorderStyle = BorderStyle.FixedSingle;
-            TitleTextBox.Location = new Point(247, 157);
-            TitleTextBox.Margin = new Padding(3, 4, 3, 4);
+            TitleTextBox.Location = new Point(216, 118);
             TitleTextBox.Name = "TitleTextBox";
-            TitleTextBox.Size = new Size(295, 27);
+            TitleTextBox.Size = new Size(258, 23);
             TitleTextBox.TabIndex = 0;
             // 
             // TitleTextLabel
             // 
             TitleTextLabel.AutoSize = true;
             TitleTextLabel.Font = new Font("Segoe UI", 12F);
-            TitleTextLabel.Location = new Point(192, 157);
+            TitleTextLabel.Location = new Point(168, 118);
             TitleTextLabel.Name = "TitleTextLabel";
-            TitleTextLabel.Size = new Size(53, 28);
+            TitleTextLabel.Size = new Size(42, 21);
             TitleTextLabel.TabIndex = 1;
             TitleTextLabel.Text = "Title:";
             // 
@@ -74,90 +72,85 @@ namespace FormBiblioteka
             // 
             AuthorTextLabel.AutoSize = true;
             AuthorTextLabel.Font = new Font("Segoe UI", 12F);
-            AuthorTextLabel.Location = new Point(170, 196);
+            AuthorTextLabel.Location = new Point(149, 147);
             AuthorTextLabel.Name = "AuthorTextLabel";
-            AuthorTextLabel.Size = new Size(77, 28);
+            AuthorTextLabel.Size = new Size(61, 21);
             AuthorTextLabel.TabIndex = 3;
             AuthorTextLabel.Text = "Author:";
             // 
             // AuthorTextBox
             // 
-            AuthorTextBox.Location = new Point(247, 196);
-            AuthorTextBox.Margin = new Padding(3, 4, 3, 4);
+            AuthorTextBox.Location = new Point(216, 147);
             AuthorTextBox.Name = "AuthorTextBox";
-            AuthorTextBox.Size = new Size(295, 27);
+            AuthorTextBox.Size = new Size(259, 23);
             AuthorTextBox.TabIndex = 2;
             // 
             // ReleaseDateTextLabel
             // 
             ReleaseDateTextLabel.AutoSize = true;
             ReleaseDateTextLabel.Font = new Font("Segoe UI", 12F);
-            ReleaseDateTextLabel.Location = new Point(123, 235);
+            ReleaseDateTextLabel.Location = new Point(108, 176);
             ReleaseDateTextLabel.Name = "ReleaseDateTextLabel";
-            ReleaseDateTextLabel.Size = new Size(126, 28);
+            ReleaseDateTextLabel.Size = new Size(102, 21);
             ReleaseDateTextLabel.TabIndex = 5;
             ReleaseDateTextLabel.Text = "Release Date:";
             // 
             // ReleaseDateTextBox
             // 
-            ReleaseDateTextBox.Location = new Point(247, 235);
-            ReleaseDateTextBox.Margin = new Padding(3, 4, 3, 4);
+            ReleaseDateTextBox.Location = new Point(216, 176);
             ReleaseDateTextBox.Name = "ReleaseDateTextBox";
-            ReleaseDateTextBox.Size = new Size(295, 27);
+            ReleaseDateTextBox.Size = new Size(259, 23);
             ReleaseDateTextBox.TabIndex = 4;
             // 
             // PageCountTextLabel
             // 
             PageCountTextLabel.AutoSize = true;
             PageCountTextLabel.Font = new Font("Segoe UI", 12F);
-            PageCountTextLabel.Location = new Point(135, 273);
+            PageCountTextLabel.Location = new Point(118, 205);
             PageCountTextLabel.Name = "PageCountTextLabel";
-            PageCountTextLabel.Size = new Size(116, 28);
+            PageCountTextLabel.Size = new Size(92, 21);
             PageCountTextLabel.TabIndex = 7;
             PageCountTextLabel.Text = "Page Count:";
             // 
             // PageCountTextBox
             // 
-            PageCountTextBox.Location = new Point(247, 273);
-            PageCountTextBox.Margin = new Padding(3, 4, 3, 4);
+            PageCountTextBox.Location = new Point(216, 205);
             PageCountTextBox.Name = "PageCountTextBox";
-            PageCountTextBox.Size = new Size(295, 27);
+            PageCountTextBox.Size = new Size(259, 23);
             PageCountTextBox.TabIndex = 6;
             // 
             // AmountTextLabel
             // 
             AmountTextLabel.AutoSize = true;
             AmountTextLabel.Font = new Font("Segoe UI", 12F);
-            AmountTextLabel.Location = new Point(161, 312);
+            AmountTextLabel.Location = new Point(141, 234);
             AmountTextLabel.Name = "AmountTextLabel";
-            AmountTextLabel.Size = new Size(87, 28);
+            AmountTextLabel.Size = new Size(69, 21);
             AmountTextLabel.TabIndex = 9;
             AmountTextLabel.Text = "Amount:";
             // 
             // AmountTextBox
             // 
-            AmountTextBox.Location = new Point(247, 312);
-            AmountTextBox.Margin = new Padding(3, 4, 3, 4);
+            AmountTextBox.Location = new Point(216, 234);
             AmountTextBox.Name = "AmountTextBox";
-            AmountTextBox.Size = new Size(295, 27);
+            AmountTextBox.Size = new Size(259, 23);
             AmountTextBox.TabIndex = 8;
             // 
             // HeaderLabel
             // 
             HeaderLabel.AutoSize = true;
             HeaderLabel.Font = new Font("Segoe UI", 24F);
-            HeaderLabel.Location = new Point(107, 77);
+            HeaderLabel.Location = new Point(94, 58);
             HeaderLabel.Name = "HeaderLabel";
-            HeaderLabel.Size = new Size(238, 54);
+            HeaderLabel.Size = new Size(193, 45);
             HeaderLabel.TabIndex = 10;
             HeaderLabel.Text = "Add a book:";
             // 
             // SubmitButton
             // 
-            SubmitButton.Location = new Point(731, 519);
-            SubmitButton.Margin = new Padding(3, 4, 3, 4);
+            SubmitButton.Location = new Point(640, 389);
             SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(151, 47);
+            SubmitButton.Size = new Size(132, 35);
             SubmitButton.TabIndex = 11;
             SubmitButton.Text = "Submit";
             SubmitButton.UseVisualStyleBackColor = true;
@@ -166,11 +159,12 @@ namespace FormBiblioteka
             // BackButton
             // 
             BackButton.AllowDrop = true;
+            BackButton.FlatStyle = FlatStyle.System;
             BackButton.Font = new Font("Arial", 16F);
-            BackButton.Location = new Point(9, 9);
+            BackButton.Location = new Point(8, 7);
             BackButton.Margin = new Padding(0);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(55, 55);
+            BackButton.Size = new Size(48, 41);
             BackButton.TabIndex = 12;
             BackButton.Text = "<";
             BackButton.UseVisualStyleBackColor = true;
@@ -179,31 +173,17 @@ namespace FormBiblioteka
             // ErrorLabel
             // 
             ErrorLabel.ForeColor = Color.Red;
-            ErrorLabel.Location = new Point(343, 347);
+            ErrorLabel.Location = new Point(300, 260);
             ErrorLabel.Name = "ErrorLabel";
-            ErrorLabel.Size = new Size(160, 31);
+            ErrorLabel.Size = new Size(140, 23);
             ErrorLabel.TabIndex = 13;
-            // 
-            // ExitButton
-            // 
-            ExitButton.AllowDrop = true;
-            ExitButton.Font = new Font("Arial", 12F);
-            ExitButton.Location = new Point(827, 9);
-            ExitButton.Margin = new Padding(0);
-            ExitButton.Name = "ExitButton";
-            ExitButton.Size = new Size(55, 55);
-            ExitButton.TabIndex = 14;
-            ExitButton.Text = "X";
-            ExitButton.UseVisualStyleBackColor = true;
-            ExitButton.Click += ButtonLogic.ExitButtonClick;
             // 
             // AddBooks
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(896, 581);
-            Controls.Add(ExitButton);
+            ClientSize = new Size(784, 436);
             Controls.Add(ErrorLabel);
             Controls.Add(BackButton);
             Controls.Add(SubmitButton);
@@ -218,8 +198,7 @@ namespace FormBiblioteka
             Controls.Add(AuthorTextBox);
             Controls.Add(TitleTextLabel);
             Controls.Add(TitleTextBox);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "AddBooks";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
@@ -244,6 +223,5 @@ namespace FormBiblioteka
         private Button SubmitButton;
         private Button BackButton;
         private Label ErrorLabel;
-        private Button ExitButton;
     }
 }
