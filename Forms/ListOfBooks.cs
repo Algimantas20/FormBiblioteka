@@ -5,7 +5,6 @@ namespace FormBiblioteka
 {
     public partial class ListOfBooks : Form
     {
-        private static List<Book> BookList = GetBooksFromFile();
         public ListOfBooks()
         {
             InitializeComponent();
@@ -14,11 +13,11 @@ namespace FormBiblioteka
         {
 
             int xPosition = (BookButtonDisplay.ClientSize.Width - 200) / 2;
-            for (int i = 0; i < BookList.Count; i++)
+            for (int i = 0; i < BookListClass.BookArray.Count; i++)
             {
 
 
-                Book book = BookList[i];
+                Book book = BookListClass.BookArray[i];
                 Button button = new()
                 {
                     Text = book.Title,
@@ -34,33 +33,11 @@ namespace FormBiblioteka
                 BookButtonDisplay.Controls.Add(button);
             }
         }
-        private void RefreshBookList()
-        {
-            BookList = GetBooksFromFile();
-            DisplayBooks();
-        }
-        private static List<Book> GetBooksFromFile()
-        {
-            const string path = @"..\..\..\Duomenys.json";
 
-            if (!File.Exists(path)) { return []; }
-
-            try
-            {
-                string jsonContent = File.ReadAllText(path);
-
-                return JsonSerializer.Deserialize<List<Book>>(jsonContent) ?? [];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error reading books: {ex.Message}");
-                return [];
-            }
-        }
         private void DisplayInfo(object sender, EventArgs e)
         {
             Button button = (sender as Button)!;
-            Book selectedBook = BookList.SingleOrDefault(book => book!.Title == button.Text)!;
+            Book selectedBook = BookListClass.BookArray.SingleOrDefault(book => book!.Title == button.Text)!;
 
             this.BookInfoLabel.Text = $"Title: {selectedBook.Title}\n" +
                                       $"Author: {selectedBook.Author}\n" +
@@ -71,13 +48,18 @@ namespace FormBiblioteka
         }
         private void BackButtonClick(object sender, EventArgs e)
         {
-            this.Hide();
-            HeroPage heroPageForm = new();
-            heroPageForm.ShowDialog();
+            this.Close();
+            this.Dispose();
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
+            HeroPage heroPage = new();
+            heroPage.Show();
         }
         private void ListOfBooks_Load(object sender, EventArgs e)
         {
-            RefreshBookList();
+            DisplayBooks();
         }
     }
 }

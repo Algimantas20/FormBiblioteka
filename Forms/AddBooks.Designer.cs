@@ -148,7 +148,6 @@ namespace FormBiblioteka
             HeaderLabel.Size = new Size(220, 49);
             HeaderLabel.TabIndex = 10;
             HeaderLabel.Text = "Add a book";
-            HeaderLabel.Click += HeaderLabel_Click;
             // 
             // SubmitButton
             // 

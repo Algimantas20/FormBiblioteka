@@ -10,4 +10,8 @@
         public int TakenBooks { get; set; } = 0;
         public int AmountLeft { get; set; } = amount;
     }
+    class BookListClass
+    {
+        public static List<Book> BookArray { get; set; } = [];
+    }
 }

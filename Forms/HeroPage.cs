@@ -1,4 +1,5 @@
 using FormBiblioteka.Forms;
+using FormBiblioteka.Modules;
 
 namespace FormBiblioteka
 {
@@ -7,6 +8,7 @@ namespace FormBiblioteka
         public HeroPage()
         {
             InitializeComponent();
+            BookListClass.BookArray = DataManagement.GetBooksFromFile();
         }
         private void AddBookButtonClick(object sender, EventArgs e)
         {

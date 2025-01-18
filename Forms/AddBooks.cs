@@ -34,44 +34,18 @@ namespace FormBiblioteka
                 amount: amount
             );
 
-            AppendABookToFile(book);
+            DataManagement.AppendABookToFile(book);
         }
 
-        private static void AppendABookToFile(Book book)
-        {
-            const string fileName = @"..\..\..\Duomenys.json";
 
-            List<Book> books;
-
-            if (File.Exists(fileName))
-            {
-                string existingJson = File.ReadAllText(fileName);
-                books = string.IsNullOrWhiteSpace(existingJson)
-                    ? []
-                    : JsonSerializer.Deserialize<List<Book>>(existingJson)
-                      ?? [];
-            }
-            else
-            {
-                books = [];
-            }
-
-            books.Add(book);
-
-            string updatedJson = JsonSerializer.Serialize(books, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(fileName, updatedJson);
-        }
 
         private void BackButtonClick(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
+            this.Dispose();
+
             HeroPage heroPage = new();
             heroPage.Show();
-        }
-
-        private void HeaderLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

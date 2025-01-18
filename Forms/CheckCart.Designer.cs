@@ -32,6 +32,7 @@
             BookInfoLabel = new Label();
             Title = new Label();
             BackButton = new Button();
+            BookInfoDisplayLabel = new Label();
             SuspendLayout();
             // 
             // BookButtonDisplay
@@ -42,7 +43,7 @@
             BookButtonDisplay.Location = new Point(12, 71);
             BookButtonDisplay.Margin = new Padding(3, 4, 3, 4);
             BookButtonDisplay.Name = "BookButtonDisplay";
-            BookButtonDisplay.Size = new Size(250, 331);
+            BookButtonDisplay.Size = new Size(285, 468);
             BookButtonDisplay.TabIndex = 19;
             // 
             // BookInfoLabel
@@ -50,9 +51,9 @@
             BookInfoLabel.BackColor = SystemColors.ControlLight;
             BookInfoLabel.BorderStyle = BorderStyle.Fixed3D;
             BookInfoLabel.Font = new Font("Times New Roman", 18F);
-            BookInfoLabel.Location = new Point(268, 11);
+            BookInfoLabel.Location = new Point(303, 11);
             BookInfoLabel.Name = "BookInfoLabel";
-            BookInfoLabel.Size = new Size(489, 391);
+            BookInfoLabel.Size = new Size(564, 524);
             BookInfoLabel.TabIndex = 15;
             // 
             // Title
@@ -62,7 +63,7 @@
             Title.Font = new Font("Times New Roman", 16F);
             Title.Location = new Point(70, 12);
             Title.Name = "Title";
-            Title.Size = new Size(192, 55);
+            Title.Size = new Size(227, 55);
             Title.TabIndex = 21;
             Title.Text = "View Cart";
             Title.TextAlign = ContentAlignment.MiddleCenter;
@@ -82,11 +83,21 @@
             BackButton.UseVisualStyleBackColor = false;
             BackButton.Click += BackButtonClick;
             // 
+            // BookInfoDisplayLabel
+            // 
+            BookInfoDisplayLabel.BackColor = SystemColors.ControlLight;
+            BookInfoDisplayLabel.Font = new Font("Times New Roman", 18F);
+            BookInfoDisplayLabel.Location = new Point(303, 12);
+            BookInfoDisplayLabel.Name = "BookInfoDisplayLabel";
+            BookInfoDisplayLabel.Size = new Size(564, 527);
+            BookInfoDisplayLabel.TabIndex = 22;
+            // 
             // CheckCart
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(769, 411);
+            ClientSize = new Size(879, 548);
+            Controls.Add(BookInfoDisplayLabel);
             Controls.Add(Title);
             Controls.Add(BackButton);
             Controls.Add(BookInfoLabel);
@@ -107,5 +118,6 @@
         private Label BookInfoLabel;
         private Label Title;
         private Button BackButton;
+        private Label BookInfoDisplayLabel;
     }
 }

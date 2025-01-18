@@ -6,8 +6,6 @@ namespace FormBiblioteka
 {
     public partial class Take_ReturnForm : Form
     {
-        List<Book> BookArray = GetBooksFromFile();
-
         public Take_ReturnForm()
         {
             InitializeComponent();
@@ -17,6 +15,8 @@ namespace FormBiblioteka
         private void BackButtonClick(object sender, EventArgs e)
         {
             this.Close();
+            this.Dispose();
+
             HeroPage heroPage = new();
             heroPage.Show();
         }
@@ -25,9 +25,9 @@ namespace FormBiblioteka
             try
             {
                 OperationType operation = (OperationType)Enum.Parse(typeof(OperationType), OperationTypeInput.Text);
-                Book book = BookArray.SingleOrDefault(book => book!.Title == BookInput.Text)!;
+                Book book = BookListClass.BookArray.SingleOrDefault(book => book!.Title == BookInput.Text) ?? throw new Exception("Invalid book");
                 int amount = (int)NumberOfBooksInput.Value;
-                UpdateData(operation, book, amount);
+                DataManagement.UpdateData(operation, book, amount, BookListClass.BookArray);
             }
             catch (Exception ex)
             {
@@ -37,77 +37,20 @@ namespace FormBiblioteka
             {
                 DisplayBooksAmounts();
             }
-
-
         }
+
         private void UpdateBookInput()
         {
             ComboBox bookInput = BookInput;
 
-            BookArray.ForEach(book => { bookInput.Items.Add(book.Title); });
-
-        }
-        private static List<Book> GetBooksFromFile()
-        {
-            const string path = @"..\..\..\Duomenys.json";
-
-            if (!File.Exists(path)) { return []; }
-
-            try
-            {
-                string jsonContent = File.ReadAllText(path);
-
-                return JsonSerializer.Deserialize<List<Book>>(jsonContent) ?? [];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error reading books: {ex.Message}");
-                return [];
-            }
-        }
-        private void UpdateData(OperationType operation, Book book, int amount)
-        {
-            try
-            {
-                switch (operation)
-                {
-                    case OperationType.Take:
-                        if (book.AmountLeft < amount) { return; }
-
-                        book.AmountLeft -= amount;
-                        book.TakenBooks += amount;
-
-                        JsonifyData();
-                        break;
-
-                    case OperationType.Return:
-                        if (book.TakenBooks < amount) { return; }
-
-                        book.AmountLeft += amount;
-                        book.TakenBooks -= amount;
-
-                        JsonifyData();
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                ErrorMessageBox.Text = ex.Message;
-            }
-        }
-        
-        private void JsonifyData()
-        {
-            const string filePath = @"..\..\..\Duomenys.json";
-            string updatedJson = JsonSerializer.Serialize(BookArray, options: new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, updatedJson);
+            BookListClass.BookArray.ForEach(book => { bookInput.Items.Add(book.Title); });
         }
 
         private void DisplayBooksAmounts(object? sender = null, EventArgs? e = null)
         {
             try
             {
-                Book book = BookArray.SingleOrDefault(book => book.Title == BookInput.Text) ?? throw new Exception("Book not found.");
+                Book book = BookListClass.BookArray.SingleOrDefault(book => book.Title == BookInput.Text) ?? throw new Exception("Book not found.");
                 BooksLeftLabel.Text = $"Books Left: {book.AmountLeft}";
                 BooksTakenLabel.Text = $"Books Taken: {book.TakenBooks}";
             }

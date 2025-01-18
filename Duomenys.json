@@ -68,8 +68,8 @@
     "ReleaseDate": "1910-01-01T00:00:00",
     "PageCount": 100,
     "Amount": 15,
-    "TakenBooks": 0,
-    "AmountLeft": 15
+    "TakenBooks": 14,
+    "AmountLeft": 1
   },
   {
     "Title": "Ocean\u0027s Depths",
@@ -88,5 +88,14 @@
     "Amount": 20,
     "TakenBooks": 0,
     "AmountLeft": 20
+  },
+  {
+    "Title": "Elden Ring",
+    "Author": "Dovydas",
+    "ReleaseDate": "2020-01-03T00:00:00",
+    "PageCount": 1000,
+    "Amount": 2,
+    "TakenBooks": 1,
+    "AmountLeft": 1
   }
 ]

@@ -6,40 +6,18 @@ namespace FormBiblioteka.Forms
 {
     public partial class CheckCart : Form
     {
-        private static List<Book> takenBookArray = GetBooksFromFile();
+        
         public CheckCart()
         {
             InitializeComponent();
-            DisplayTakenBooks();
         }
-        private static List<Book> GetBooksFromFile()
+ 
+        private void DisplayTakenBooks(List<Book> takenBookArray)
         {
-            const string path = @"..\..\..\Duomenys.json";
-
-            if (!File.Exists(path)) { return []; }
-
-            try
-            {
-                string jsonContent = File.ReadAllText(path);
-                return JsonSerializer.Deserialize<List<Book>>(jsonContent)!
-                    .Where(book =>
-                    {
-                        return book.Amount != book.AmountLeft;
-                    }).ToList() ?? [];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error reading books: {ex.Message}");
-                return [];
-            }
-        }
-        private void DisplayTakenBooks()
-        {
-            BookButtonDisplay.Controls.Clear();
+            
             int xPosition = (BookButtonDisplay.ClientSize.Width - 200) / 2;
             takenBookArray.ForEach(book =>
             {
-                Debug.WriteLine($"Adding {book.Title}");
                 int i = takenBookArray.IndexOf(book);
                 Button button = new()
                 {
@@ -48,26 +26,38 @@ namespace FormBiblioteka.Forms
                     Location = new Point(xPosition, 10 + (50 * i)),
                     Name = $"BookButton{i}",
                     FlatStyle = FlatStyle.Popup,
-                    BackColor = Color.White
+                    BackColor = Color.White,
                 };
+
+                button.Click += (sender, e) => { DisplayInfo(sender!, e); };
+                
                 BookButtonDisplay.Controls.Add(button);
-                Debug.WriteLine($"Added {book.Title}");
             });
+        }
+        private void DisplayInfo(object sender, EventArgs e)
+        {
+            Button button = (sender as Button)!;
+            Book selectedBook = BookListClass.BookArray.SingleOrDefault(book => book!.Title == button.Text)!;
+
+            this.BookInfoDisplayLabel.Text = $"Title: {selectedBook.Title}\n" +
+                                      $"Author: {selectedBook.Author}\n" +
+                                      $"Release Date: {selectedBook.ReleaseDate}\n" +
+                                      $"Page Count: {selectedBook.PageCount}\n" +
+                                      $"Amount: {selectedBook.Amount}\n" +
+                                      $"Amount Taken: {selectedBook.TakenBooks}";
         }
         private void BackButtonClick(object sender, EventArgs e)
         {
-            this.Hide();
-            HeroPage heroPageForm = new();
-            heroPageForm.ShowDialog();
-        }
-        private void RefreshBookList()
-        {
-            takenBookArray = GetBooksFromFile();
-            DisplayTakenBooks();
+            this.Close();
+            this.Dispose();
+
+            HeroPage heroPage = new();
+            heroPage.Show();
         }
         private void CheckCart_Load(object sender, EventArgs e)
         {
-            RefreshBookList();
+            List<Book> takenBookArray = BookListClass.BookArray.Where(book => { return book.Amount != book.AmountLeft; }).ToList();
+            DisplayTakenBooks(takenBookArray);
         }
     }
 }
