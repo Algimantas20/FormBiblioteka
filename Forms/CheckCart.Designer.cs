@@ -1,8 +1,6 @@
-﻿using FormBiblioteka.Modules;
-
-namespace FormBiblioteka
+﻿namespace FormBiblioteka.Forms
 {
-    partial class ListOfBooks
+    partial class CheckCart
     {
         /// <summary>
         /// Required designer variable.
@@ -30,22 +28,44 @@ namespace FormBiblioteka
         /// </summary>
         private void InitializeComponent()
         {
-            BookInfoLabel = new Label();
-            BackButton = new Button();
             BookButtonDisplay = new Panel();
+            BookInfoLabel = new Label();
             Title = new Label();
-            panel1 = new Panel();
-            panel1.SuspendLayout();
+            BackButton = new Button();
             SuspendLayout();
+            // 
+            // BookButtonDisplay
+            // 
+            BookButtonDisplay.AutoScroll = true;
+            BookButtonDisplay.BackColor = SystemColors.ControlLight;
+            BookButtonDisplay.BorderStyle = BorderStyle.Fixed3D;
+            BookButtonDisplay.Location = new Point(12, 71);
+            BookButtonDisplay.Margin = new Padding(3, 4, 3, 4);
+            BookButtonDisplay.Name = "BookButtonDisplay";
+            BookButtonDisplay.Size = new Size(250, 331);
+            BookButtonDisplay.TabIndex = 19;
             // 
             // BookInfoLabel
             // 
             BookInfoLabel.BackColor = SystemColors.ControlLight;
+            BookInfoLabel.BorderStyle = BorderStyle.Fixed3D;
             BookInfoLabel.Font = new Font("Times New Roman", 18F);
-            BookInfoLabel.Location = new Point(-2, -2);
+            BookInfoLabel.Location = new Point(268, 11);
             BookInfoLabel.Name = "BookInfoLabel";
-            BookInfoLabel.Size = new Size(487, 392);
-            BookInfoLabel.TabIndex = 14;
+            BookInfoLabel.Size = new Size(489, 391);
+            BookInfoLabel.TabIndex = 15;
+            // 
+            // Title
+            // 
+            Title.BackColor = SystemColors.ControlLight;
+            Title.BorderStyle = BorderStyle.Fixed3D;
+            Title.Font = new Font("Times New Roman", 16F);
+            Title.Location = new Point(70, 12);
+            Title.Name = "Title";
+            Title.Size = new Size(192, 55);
+            Title.TabIndex = 21;
+            Title.Text = "View Cart";
+            Title.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // BackButton
             // 
@@ -53,70 +73,39 @@ namespace FormBiblioteka
             BackButton.BackColor = SystemColors.ControlLight;
             BackButton.FlatStyle = FlatStyle.Popup;
             BackButton.Font = new Font("Times New Roman", 16F);
-            BackButton.Location = new Point(14, 7);
+            BackButton.Location = new Point(12, 12);
             BackButton.Margin = new Padding(0);
             BackButton.Name = "BackButton";
-            BackButton.Size = new Size(48, 41);
-            BackButton.TabIndex = 17;
+            BackButton.Size = new Size(55, 55);
+            BackButton.TabIndex = 20;
             BackButton.Text = "<";
             BackButton.UseVisualStyleBackColor = false;
             BackButton.Click += BackButtonClick;
             // 
-            // BookButtonDisplay
-            // 
-            BookButtonDisplay.AutoScroll = true;
-            BookButtonDisplay.BackColor = SystemColors.ControlLight;
-            BookButtonDisplay.BorderStyle = BorderStyle.Fixed3D;
-            BookButtonDisplay.Location = new Point(14, 52);
-            BookButtonDisplay.Name = "BookButtonDisplay";
-            BookButtonDisplay.Size = new Size(250, 347);
-            BookButtonDisplay.TabIndex = 18;
-            // 
-            // Title
-            // 
-            Title.BackColor = SystemColors.ControlLight;
-            Title.BorderStyle = BorderStyle.Fixed3D;
-            Title.Font = new Font("Times New Roman", 16F);
-            Title.Location = new Point(65, 7);
-            Title.Name = "Title";
-            Title.Size = new Size(199, 41);
-            Title.TabIndex = 19;
-            Title.Text = "List of Books";
-            Title.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(BookInfoLabel);
-            panel1.Location = new Point(270, 7);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(487, 392);
-            panel1.TabIndex = 20;
-            // 
-            // ListOfBooks
+            // CheckCart
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(769, 411);
             Controls.Add(Title);
-            Controls.Add(panel1);
-            Controls.Add(BookButtonDisplay);
             Controls.Add(BackButton);
+            Controls.Add(BookInfoLabel);
+            Controls.Add(BookButtonDisplay);
+            Font = new Font("Times New Roman", 9F);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "ListOfBooks";
+            Name = "CheckCart";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "List of Books";
-            Load += ListOfBooks_Load;
-            panel1.ResumeLayout(false);
+            Text = "Biblioteka";
+            Load += CheckCart_Load;
             ResumeLayout(false);
         }
 
         #endregion
-        private Label BookInfoLabel;
-        private Button BackButton;
+
         private Panel BookButtonDisplay;
+        private Label BookInfoLabel;
         private Label Title;
-        private Panel panel1;
+        private Button BackButton;
     }
 }

@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices;
+using FormBiblioteka.Forms;
 
 namespace FormBiblioteka
 {
@@ -19,7 +19,7 @@ namespace FormBiblioteka
         {
             this.Hide();
             ListOfBooks listOfBooksForm = new();
-            listOfBooksForm.Show();
+            listOfBooksForm.ShowDialog();
         }
 
         private void TakeReturnFormButtonClick(object sender, EventArgs e)
@@ -27,6 +27,13 @@ namespace FormBiblioteka
             this.Hide();
             Take_ReturnForm takeReturnForm = new();
             takeReturnForm.ShowDialog();
+        }
+
+        private void CheckCartFormButtonClick(Object sender, EventArgs e)
+        {
+            this.Hide();
+            CheckCart checkCartForm = new();
+            checkCartForm.ShowDialog();
         }
     }
 }

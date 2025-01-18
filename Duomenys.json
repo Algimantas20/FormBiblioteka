@@ -5,8 +5,8 @@
     "ReleaseDate": "2003-07-14T00:00:00",
     "PageCount": 350,
     "Amount": 10,
-    "TakenBooks": 3,
-    "AmountLeft": 7
+    "TakenBooks": 0,
+    "AmountLeft": 10
   },
   {
     "Title": "Mystery of the Night",
@@ -14,8 +14,8 @@
     "ReleaseDate": "2010-10-31T00:00:00",
     "PageCount": 275,
     "Amount": 8,
-    "TakenBooks": 2,
-    "AmountLeft": 6
+    "TakenBooks": 3,
+    "AmountLeft": 5
   },
   {
     "Title": "Cooking Like a Pro",
@@ -23,8 +23,8 @@
     "ReleaseDate": "2015-03-10T00:00:00",
     "PageCount": 150,
     "Amount": 5,
-    "TakenBooks": 1,
-    "AmountLeft": 4
+    "TakenBooks": 3,
+    "AmountLeft": 2
   },
   {
     "Title": "History of Technology",
@@ -41,8 +41,8 @@
     "ReleaseDate": "2018-08-15T00:00:00",
     "PageCount": 400,
     "Amount": 6,
-    "TakenBooks": 4,
-    "AmountLeft": 2
+    "TakenBooks": 3,
+    "AmountLeft": 3
   },
   {
     "Title": "Space Odyssey",
@@ -50,8 +50,8 @@
     "ReleaseDate": "1985-11-25T00:00:00",
     "PageCount": 320,
     "Amount": 7,
-    "TakenBooks": 3,
-    "AmountLeft": 4
+    "TakenBooks": 0,
+    "AmountLeft": 7
   },
   {
     "Title": "Gardening for Beginners",
@@ -68,17 +68,17 @@
     "ReleaseDate": "1910-01-01T00:00:00",
     "PageCount": 100,
     "Amount": 15,
-    "TakenBooks": 5,
-    "AmountLeft": 10
+    "TakenBooks": 0,
+    "AmountLeft": 15
   },
   {
-    "Title": "Ocean's Depths",
+    "Title": "Ocean\u0027s Depths",
     "Author": "Marina Blue",
     "ReleaseDate": "2021-04-12T00:00:00",
     "PageCount": 260,
     "Amount": 12,
-    "TakenBooks": 6,
-    "AmountLeft": 6
+    "TakenBooks": 0,
+    "AmountLeft": 12
   },
   {
     "Title": "Programming Essentials",
@@ -86,7 +86,7 @@
     "ReleaseDate": "2023-09-01T00:00:00",
     "PageCount": 600,
     "Amount": 20,
-    "TakenBooks": 8,
-    "AmountLeft": 12
+    "TakenBooks": 0,
+    "AmountLeft": 20
   }
 ]

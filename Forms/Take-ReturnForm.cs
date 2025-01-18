@@ -1,5 +1,5 @@
 ﻿using FormBiblioteka.Modules;
-using System.Runtime.InteropServices;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace FormBiblioteka
@@ -28,9 +28,14 @@ namespace FormBiblioteka
                 Book book = BookArray.SingleOrDefault(book => book!.Title == BookInput.Text)!;
                 int amount = (int)NumberOfBooksInput.Value;
                 UpdateData(operation, book, amount);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 ErrorMessageBox.Text = ex.Message;
+            }
+            finally
+            {
+                DisplayBooksAmounts();
             }
 
 
@@ -62,27 +67,35 @@ namespace FormBiblioteka
         }
         private void UpdateData(OperationType operation, Book book, int amount)
         {
-            switch (operation)
+            try
             {
-                case OperationType.Take:
-                    if (book.AmountLeft < amount) { return; }
+                switch (operation)
+                {
+                    case OperationType.Take:
+                        if (book.AmountLeft < amount) { return; }
 
-                    book.AmountLeft -= amount;
-                    book.TakenBooks += amount;
+                        book.AmountLeft -= amount;
+                        book.TakenBooks += amount;
 
-                    JsonifyData();
-                    break;
+                        JsonifyData();
+                        break;
 
-                case OperationType.Return:
-                    if (book.TakenBooks < amount) { return; }
+                    case OperationType.Return:
+                        if (book.TakenBooks < amount) { return; }
 
-                    book.AmountLeft += amount;
-                    book.TakenBooks -= amount;
+                        book.AmountLeft += amount;
+                        book.TakenBooks -= amount;
 
-                    JsonifyData();
-                    break;
+                        JsonifyData();
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorMessageBox.Text = ex.Message;
             }
         }
+        
         private void JsonifyData()
         {
             const string filePath = @"..\..\..\Duomenys.json";
@@ -90,14 +103,18 @@ namespace FormBiblioteka
             File.WriteAllText(filePath, updatedJson);
         }
 
-        private void HeaderLabel_Click(object sender, EventArgs e)
+        private void DisplayBooksAmounts(object? sender = null, EventArgs? e = null)
         {
-
-        }
-
-        private void NumberOfBooksInput_ValueChanged(object sender, EventArgs e)
-        {
-
+            try
+            {
+                Book book = BookArray.SingleOrDefault(book => book.Title == BookInput.Text) ?? throw new Exception("Book not found.");
+                BooksLeftLabel.Text = $"Books Left: {book.AmountLeft}";
+                BooksTakenLabel.Text = $"Books Taken: {book.TakenBooks}";
+            }
+            catch (Exception ex)
+            {
+                ErrorMessageBox.Text = ex.Message;
+            }
         }
     }
 }

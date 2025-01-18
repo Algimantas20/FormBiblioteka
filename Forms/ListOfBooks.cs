@@ -16,7 +16,7 @@ namespace FormBiblioteka
             int xPosition = (BookButtonDisplay.ClientSize.Width - 200) / 2;
             for (int i = 0; i < BookList.Count; i++)
             {
-                
+
 
                 Book book = BookList[i];
                 Button button = new()
@@ -71,7 +71,7 @@ namespace FormBiblioteka
         }
         private void BackButtonClick(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             HeroPage heroPageForm = new();
             heroPageForm.ShowDialog();
         }
