@@ -22,11 +22,18 @@ namespace FormBiblioteka
         }
         private void SubmitButtonClick(object sender, EventArgs e)
         {
-            OperationType operation = (OperationType)Enum.Parse(typeof(OperationType), OperationTypeInput.Text);
-            Book book = BookArray.SingleOrDefault(book => book!.Title == BookInput.Text)!;
-            int amount = (int)NumberOfBooksInput.Value;
+            try
+            {
+                OperationType operation = (OperationType)Enum.Parse(typeof(OperationType), OperationTypeInput.Text);
+                Book book = BookArray.SingleOrDefault(book => book!.Title == BookInput.Text)!;
+                int amount = (int)NumberOfBooksInput.Value;
+                UpdateData(operation, book, amount);
+            } catch (Exception ex)
+            {
+                ErrorMessageBox.Text = ex.Message;
+            }
 
-            UpdateData(operation, book, amount);
+
         }
         private void UpdateBookInput()
         {
@@ -81,6 +88,16 @@ namespace FormBiblioteka
             const string filePath = @"..\..\..\Duomenys.json";
             string updatedJson = JsonSerializer.Serialize(BookArray, options: new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, updatedJson);
+        }
+
+        private void HeaderLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberOfBooksInput_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

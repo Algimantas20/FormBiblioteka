@@ -10,10 +10,29 @@ namespace FormBiblioteka
         {
             InitializeComponent();
         }
-
-        private void ListOfBooks_Load(object sender, EventArgs e)
+        private void DisplayBooks()
         {
-            RefreshBookList();
+
+            int xPosition = (BookButtonDisplay.ClientSize.Width - 200) / 2;
+            for (int i = 0; i < BookList.Count; i++)
+            {
+                
+
+                Book book = BookList[i];
+                Button button = new()
+                {
+                    Text = book.Title,
+                    Size = new Size(200, 40),
+                    Location = new Point(xPosition, 10 + (50 * i)),
+                    Name = $"BookButton{i}",
+                    FlatStyle = FlatStyle.Popup,
+                    BackColor = Color.White,
+                };
+
+                button.Click += (sender, e) => { DisplayInfo(sender!, e); };
+
+                BookButtonDisplay.Controls.Add(button);
+            }
         }
         private void RefreshBookList()
         {
@@ -38,35 +57,6 @@ namespace FormBiblioteka
                 return [];
             }
         }
-
-        private void BackButtonClick(object sender, EventArgs e)
-        {
-            this.Close();
-            HeroPage heroPageForm = new();
-            heroPageForm.ShowDialog();
-        }
-        private void DisplayBooks()
-        {
-
-            int xPosition = (BookButtonDisplay.ClientSize.Width - 200) / 2;
-            for (int i = 0; i < BookList.Count; i++)
-            {
-                
-
-                Book book = BookList[i];
-                Button button = new()
-                {
-                    Text = book.Title,
-                    Size = new Size(200, 40),
-                    Location = new Point(xPosition, 10 + (50 * i)),
-                    Name = $"BookButton{i}"
-                };
-
-                button.Click += (sender, e) => { DisplayInfo(sender!, e); };
-
-                BookButtonDisplay.Controls.Add(button);
-            }
-        }
         private void DisplayInfo(object sender, EventArgs e)
         {
             Button button = (sender as Button)!;
@@ -76,8 +66,18 @@ namespace FormBiblioteka
                                       $"Author: {selectedBook.Author}\n" +
                                       $"Release Date: {selectedBook.ReleaseDate}\n" +
                                       $"Page Count: {selectedBook.PageCount}\n" +
-                                      $"Amount:{selectedBook.Amount}\n" +
-                                      $"Amount Left:{selectedBook.AmountLeft}";
+                                      $"Amount: {selectedBook.Amount}\n" +
+                                      $"Amount Left: {selectedBook.AmountLeft}";
+        }
+        private void BackButtonClick(object sender, EventArgs e)
+        {
+            this.Close();
+            HeroPage heroPageForm = new();
+            heroPageForm.ShowDialog();
+        }
+        private void ListOfBooks_Load(object sender, EventArgs e)
+        {
+            RefreshBookList();
         }
     }
 }

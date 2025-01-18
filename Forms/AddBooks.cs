@@ -69,5 +69,10 @@ namespace FormBiblioteka
             HeroPage heroPage = new();
             heroPage.Show();
         }
+
+        private void HeaderLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

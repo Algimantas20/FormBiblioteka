@@ -33,63 +33,90 @@ namespace FormBiblioteka
             AddBookButton = new Button();
             TakeReturnFormButton = new Button();
             ListOfBooksButton = new Button();
+            panel1 = new Panel();
             label1 = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // AddBookButton
             // 
-            AddBookButton.Location = new Point(50, 225);
+            AddBookButton.BackColor = SystemColors.ControlLight;
+            AddBookButton.FlatStyle = FlatStyle.Popup;
+            AddBookButton.Font = new Font("Times New Roman", 16F);
+            AddBookButton.Location = new Point(57, 300);
+            AddBookButton.Margin = new Padding(3, 4, 3, 4);
             AddBookButton.Name = "AddBookButton";
-            AddBookButton.Size = new Size(175, 50);
-            AddBookButton.TabIndex = 0;
+            AddBookButton.Size = new Size(200, 67);
+            AddBookButton.TabIndex = 2;
             AddBookButton.Text = "Add a Book";
-            AddBookButton.UseVisualStyleBackColor = true;
+            AddBookButton.UseVisualStyleBackColor = false;
             AddBookButton.Click += AddBookButtonClick;
             // 
             // TakeReturnFormButton
             // 
-            TakeReturnFormButton.Location = new Point(300, 225);
+            TakeReturnFormButton.BackColor = SystemColors.ControlLight;
+            TakeReturnFormButton.FlatStyle = FlatStyle.Popup;
+            TakeReturnFormButton.Font = new Font("Times New Roman", 16F);
+            TakeReturnFormButton.Location = new Point(343, 300);
+            TakeReturnFormButton.Margin = new Padding(3, 4, 3, 4);
             TakeReturnFormButton.Name = "TakeReturnFormButton";
-            TakeReturnFormButton.Size = new Size(175, 50);
-            TakeReturnFormButton.TabIndex = 1;
+            TakeReturnFormButton.Size = new Size(200, 67);
+            TakeReturnFormButton.TabIndex = 0;
             TakeReturnFormButton.Text = "Take/Return";
-            TakeReturnFormButton.UseVisualStyleBackColor = true;
+            TakeReturnFormButton.UseVisualStyleBackColor = false;
             TakeReturnFormButton.Click += TakeReturnFormButtonClick;
             // 
             // ListOfBooksButton
             // 
-            ListOfBooksButton.Location = new Point(550, 225);
+            ListOfBooksButton.BackColor = SystemColors.ControlLight;
+            ListOfBooksButton.FlatStyle = FlatStyle.Popup;
+            ListOfBooksButton.Font = new Font("Times New Roman", 16F);
+            ListOfBooksButton.Location = new Point(629, 300);
+            ListOfBooksButton.Margin = new Padding(3, 4, 3, 4);
             ListOfBooksButton.Name = "ListOfBooksButton";
-            ListOfBooksButton.Size = new Size(175, 50);
-            ListOfBooksButton.TabIndex = 2;
+            ListOfBooksButton.Size = new Size(200, 67);
+            ListOfBooksButton.TabIndex = 1;
             ListOfBooksButton.Text = "List of Books";
-            ListOfBooksButton.UseVisualStyleBackColor = true;
+            ListOfBooksButton.UseVisualStyleBackColor = false;
             ListOfBooksButton.Click += ListOfBooksButtonClick;
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(57, 159);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(772, 103);
+            panel1.TabIndex = 3;
             // 
             // label1
             // 
-            label1.Font = new Font("Segoe UI", 24F);
-            label1.Location = new Point(231, 150);
+            label1.BackColor = SystemColors.ControlLight;
+            label1.Font = new Font("Times New Roman", 32F);
+            label1.Location = new Point(-2, -2);
             label1.Name = "label1";
-            label1.Size = new Size(313, 50);
-            label1.TabIndex = 3;
+            label1.Size = new Size(772, 103);
+            label1.TabIndex = 0;
             label1.Text = "Biblioteka";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // HeroPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(784, 436);
-            Controls.Add(label1);
+            ClientSize = new Size(882, 553);
+            Controls.Add(panel1);
             Controls.Add(ListOfBooksButton);
             Controls.Add(TakeReturnFormButton);
             Controls.Add(AddBookButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "HeroPage";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Biblioteka";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -98,6 +125,7 @@ namespace FormBiblioteka
         private Button AddBookButton;
         private Button TakeReturnFormButton;
         private Button ListOfBooksButton;
+        private Panel panel1;
         private Label label1;
     }
 }
